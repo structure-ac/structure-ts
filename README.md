@@ -38,7 +38,7 @@ sdk.accounts.accounts().then((res: AccountsResponse | AxiosError) => {
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### accounts

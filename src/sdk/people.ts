@@ -87,9 +87,13 @@ export class People {
    * Search People
    */
   searchSearch(
-    req: any,
+    req: operations.SearchSearchApplicationJSON,
     config?: AxiosRequestConfig
   ): Promise<operations.SearchSearchResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.SearchSearchApplicationJSON(req);
+    }
+
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/people/search";
 

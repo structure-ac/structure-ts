@@ -4,6 +4,37 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
+import { Expose } from "class-transformer";
+
+export class SearchSearchApplicationJSON extends SpeakeasyBase {
+  /**
+   * Filter for searching
+   */
+  @SpeakeasyMetadata()
+  @Expose({ name: "filter" })
+  filter?: string;
+
+  /**
+   * Number of results per page (0-100)
+   */
+  @SpeakeasyMetadata()
+  @Expose({ name: "limit" })
+  limit?: string;
+
+  /**
+   * The offset number to start at
+   */
+  @SpeakeasyMetadata()
+  @Expose({ name: "page" })
+  page?: string;
+
+  /**
+   * Query for searching
+   */
+  @SpeakeasyMetadata()
+  @Expose({ name: "query" })
+  query?: string;
+}
 
 export class SearchSearchResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()

@@ -34,9 +34,13 @@ export class Auths {
    * Login user
    */
   auths(
-    req: any,
+    req: operations.AuthsApplicationJSON,
     config?: AxiosRequestConfig
   ): Promise<operations.AuthsResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.AuthsApplicationJSON(req);
+    }
+
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/auths";
 

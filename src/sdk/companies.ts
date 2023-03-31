@@ -197,9 +197,13 @@ export class Companies {
    * Search Companies
    */
   searchCompanies(
-    req: any,
+    req: operations.SearchCompaniesApplicationJSON,
     config?: AxiosRequestConfig
   ): Promise<operations.SearchCompaniesResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.SearchCompaniesApplicationJSON(req);
+    }
+
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/companies/search";
 
