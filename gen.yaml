@@ -1,10 +1,10 @@
 configVersion: 1.0.0
 generation:
   telemetryEnabled: false
-  sdkClassName: SDK
-  sdkFlattening: false
+  sdkClassName: structure
+  sdkFlattening: true
   singleTagPerOp: false
 typescript:
-  version: ""
+  version: "v1.0.0"
   author: structure
   packageName: Structure
