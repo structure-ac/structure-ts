@@ -10,6 +10,6 @@ generation:
   sdkFlattening: true
   singleTagPerOp: false
 typescript:
-  version: 0.0.1
+  version: ""
   author: structure
   packageName: Structure
