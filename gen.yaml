@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 18fbb4e494ddd33659615dce0313f089
+  docChecksum: 23b46480eab60f8e9abb18b305c91679
   docVersion: "1.0"
   speakeasyVersion: 1.19.2
   generationVersion: 2.16.5
@@ -10,6 +10,6 @@ generation:
   sdkFlattening: true
   singleTagPerOp: false
 typescript:
-  version: ""
+  version: 0.0.1
   author: structure
   packageName: Structure
