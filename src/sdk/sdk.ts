@@ -4,11 +4,10 @@
 
 import * as utils from "../internal/utils";
 import { Accounts } from "./accounts";
-import { Auths } from "./auths";
 import { Companies } from "./companies";
-import { Me } from "./me";
 import * as shared from "./models/shared";
 import { People } from "./people";
+import { User } from "./user";
 import axios, { AxiosInstance } from "axios";
 
 /**
@@ -38,17 +37,28 @@ export type SDKProps = {
  * Structure provides company and people data. Use our dataset of 700 million people and 24 million companies to build products, enrich person profiles, power predictive modeling/ai, analysis, and more.
  */
 export class Structure {
+  /**
+   * Accounts
+   */
   public accounts: Accounts;
-  public auths: Auths;
+  /**
+   * Companies
+   */
   public companies: Companies;
-  public me: Me;
+  /**
+   * People
+   */
   public people: People;
+  /**
+   * User
+   */
+  public user: User;
 
   public _defaultClient: AxiosInstance;
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.0.1";
+  private _sdkVersion = "0.0.2";
   private _genVersion = "2.16.7";
   private _globals: any;
 
@@ -78,15 +88,6 @@ export class Structure {
       this._genVersion
     );
 
-    this.auths = new Auths(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
     this.companies = new Companies(
       this._defaultClient,
       this._securityClient,
@@ -96,7 +97,7 @@ export class Structure {
       this._genVersion
     );
 
-    this.me = new Me(
+    this.people = new People(
       this._defaultClient,
       this._securityClient,
       this._serverURL,
@@ -105,7 +106,7 @@ export class Structure {
       this._genVersion
     );
 
-    this.people = new People(
+    this.user = new User(
       this._defaultClient,
       this._securityClient,
       this._serverURL,

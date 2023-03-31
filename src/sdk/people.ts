@@ -6,6 +6,9 @@ import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
+/**
+ * People
+ */
 export class People {
   _defaultClient: AxiosInstance;
   _securityClient: AxiosInstance;
@@ -33,7 +36,7 @@ export class People {
   /**
    * Enrich a person profile
    */
-  enrichPerson(
+  enrich(
     req: operations.EnrichPersonRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.EnrichPersonResponse> {
@@ -86,12 +89,12 @@ export class People {
   /**
    * Search People
    */
-  searchSearch(
-    req: operations.SearchSearchApplicationJSON,
+  search(
+    req: operations.SearchPeopleApplicationJSON,
     config?: AxiosRequestConfig
-  ): Promise<operations.SearchSearchResponse> {
+  ): Promise<operations.SearchPeopleResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.SearchSearchApplicationJSON(req);
+      req = new operations.SearchPeopleApplicationJSON(req);
     }
 
     const baseURL: string = this._serverURL;
@@ -128,8 +131,8 @@ export class People {
 
       if (httpRes?.status == null)
         throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.SearchSearchResponse =
-        new operations.SearchSearchResponse({
+      const res: operations.SearchPeopleResponse =
+        new operations.SearchPeopleResponse({
           statusCode: httpRes.status,
           contentType: contentType,
           rawResponse: httpRes,

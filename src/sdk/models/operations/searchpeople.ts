@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export class SearchSearchApplicationJSON extends SpeakeasyBase {
+export class SearchPeopleApplicationJSON extends SpeakeasyBase {
   /**
    * Filter for searching
    */
@@ -36,7 +36,7 @@ export class SearchSearchApplicationJSON extends SpeakeasyBase {
   query?: string;
 }
 
-export class SearchSearchResponse extends SpeakeasyBase {
+export class SearchPeopleResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   body?: Uint8Array;
 

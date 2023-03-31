@@ -6,6 +6,9 @@ import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
+/**
+ * Accounts
+ */
 export class Accounts {
   _defaultClient: AxiosInstance;
   _securityClient: AxiosInstance;
@@ -33,7 +36,9 @@ export class Accounts {
   /**
    * Show current user accounts
    */
-  accounts(config?: AxiosRequestConfig): Promise<operations.AccountsResponse> {
+  listUsers(
+    config?: AxiosRequestConfig
+  ): Promise<operations.ListUsersResponse> {
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/accounts";
 
@@ -50,11 +55,12 @@ export class Accounts {
 
       if (httpRes?.status == null)
         throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.AccountsResponse = new operations.AccountsResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
+      const res: operations.ListUsersResponse =
+        new operations.ListUsersResponse({
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        });
       switch (true) {
         case httpRes?.status == 200:
           if (utils.matchContentType(contentType, `*/*`)) {

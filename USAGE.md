@@ -1,18 +1,26 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import {
-  AccountsResponse
+  EnrichCompanyRequest,
+  EnrichCompanyResponse
 } from "Structure/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";
 import { Structure } from "Structure";
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_API_KEY",
+    bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
   },
 });
 
-sdk.accounts.accounts().then((res: AccountsResponse | AxiosError) => {
+const req: EnrichCompanyRequest = {
+  countryCode: "corrupti",
+  headquarters: "provident",
+  id: "distinctio",
+  name: "quibusdam",
+};
+
+sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {
    // handle response
 });
 ```

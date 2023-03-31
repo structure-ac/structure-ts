@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export class AuthsApplicationJSON extends SpeakeasyBase {
+export class LoginApplicationJSON extends SpeakeasyBase {
   /**
    * The email of the user
    */
@@ -22,7 +22,7 @@ export class AuthsApplicationJSON extends SpeakeasyBase {
   password: string;
 }
 
-export class AuthsResponse extends SpeakeasyBase {
+export class LoginResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   body?: Uint8Array;
 
