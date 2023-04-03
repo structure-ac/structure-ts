@@ -11,5 +11,5 @@ generation:
   singleTagPerOp: false
 typescript:
   version: 0.0.2
-  author: Structure
-  packageName: Structure
+  author: structure
+  packageName: structure-ts
