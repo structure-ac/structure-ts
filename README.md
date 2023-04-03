@@ -3,7 +3,7 @@
         <source srcset="https://user-images.githubusercontent.com/6267663/229523981-b357a689-adc6-4905-ac0e-e432aee5800b.png" media="(prefers-color-scheme: dark)">
         <img src="https://user-images.githubusercontent.com/6267663/229523981-b357a689-adc6-4905-ac0e-e432aee5800b.png">
     </picture>
-    <h1>Python SDK</h1>
+    <h1>Typescript SDK</h1>
    <p>Discover rich information on people and companies</p>
    <a href="https://docs.structure.ac/"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=2564ec&style=for-the-badge" /></a>
    <a href="https://github.com/structure-ac/structure-ts/actions"><img src="https://img.shields.io/github/actions/workflow/status/structure-ac/structure-ts/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
