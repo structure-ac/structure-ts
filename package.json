@@ -1,7 +1,7 @@
 {
-  "name": "Structure",
-  "version": "0.0.2",
-  "author": "Structure",
+  "name": "structure-ts",
+  "version": "0.0.3",
+  "author": "structure",
   "scripts": {
     "prepare": "tsc --build"
   },

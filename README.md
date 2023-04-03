@@ -6,13 +6,13 @@
 ### NPM
 
 ```bash
-npm add Structure
+npm add structure-ts
 ```
 
 ### Yarn
 
 ```bash
-yarn add Structure
+yarn add structure-ts
 ```
 <!-- End SDK Installation -->
 
@@ -22,10 +22,10 @@ yarn add Structure
 import {
   EnrichCompanyRequest,
   EnrichCompanyResponse
-} from "Structure/dist/sdk/models/operations";
+} from "structure-ts/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";
-import { Structure } from "Structure";
+import { Structure } from "structure-ts";
 const sdk = new Structure({
   security: {
     bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",

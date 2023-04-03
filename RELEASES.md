@@ -37,3 +37,11 @@ Based on:
 - Speakeasy CLI 1.19.3 (2.16.7) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v0.0.2] https://www.npmjs.com/package/Structure/v/0.0.2 - .
+
+## 2023-04-03 13:08:59
+### Changes
+Based on:
+- OpenAPI Doc 1.0 https://prod.speakeasyapi.dev/v1/apis/Structure/version/1.0.0/schema/download
+- Speakeasy CLI 1.19.3 (2.16.7) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v0.0.3] https://www.npmjs.com/package/structure-ts/v/0.0.3 - .
