@@ -12,4 +12,4 @@ generation:
 typescript:
   version: 0.0.1
   author: structure
-  packageName: Structure
+  packageName: structure-ts
