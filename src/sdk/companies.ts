@@ -6,6 +6,9 @@ import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
+/**
+ * Companies
+ */
 export class Companies {
   _defaultClient: AxiosInstance;
   _securityClient: AxiosInstance;
@@ -31,119 +34,9 @@ export class Companies {
   }
 
   /**
-   * Show company employees
-   */
-  companyEmployees(
-    req: operations.CompanyEmployeesRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.CompanyEmployeesResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.CompanyEmployeesRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/companies/{id}/employees",
-      req
-    );
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const queryParams: string = utils.serializeQueryParams(req);
-
-    const r = client.request({
-      url: url + queryParams,
-      method: "get",
-      ...config,
-    });
-
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.CompanyEmployeesResponse =
-        new operations.CompanyEmployeesResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `*/*`)) {
-            const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-            const out: Uint8Array = new Uint8Array(resBody.length);
-            for (let i = 0; i < resBody.length; i++)
-              out[i] = resBody.charCodeAt(i);
-            res.body = out;
-          }
-          break;
-        case [401, 403, 404].includes(httpRes?.status):
-          break;
-      }
-
-      return res;
-    });
-  }
-
-  /**
-   * Show company jobs
-   */
-  companyJobs(
-    req: operations.CompanyJobsRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.CompanyJobsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.CompanyJobsRequest(req);
-    }
-
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/companies/{id}/jobs", req);
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const queryParams: string = utils.serializeQueryParams(req);
-
-    const r = client.request({
-      url: url + queryParams,
-      method: "get",
-      ...config,
-    });
-
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.CompanyJobsResponse =
-        new operations.CompanyJobsResponse({
-          statusCode: httpRes.status,
-          contentType: contentType,
-          rawResponse: httpRes,
-        });
-      switch (true) {
-        case httpRes?.status == 200:
-          if (utils.matchContentType(contentType, `*/*`)) {
-            const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-            const out: Uint8Array = new Uint8Array(resBody.length);
-            for (let i = 0; i < resBody.length; i++)
-              out[i] = resBody.charCodeAt(i);
-            res.body = out;
-          }
-          break;
-        case [401, 403, 404].includes(httpRes?.status):
-          break;
-      }
-
-      return res;
-    });
-  }
-
-  /**
    * Enrich a company profile
    */
-  enrichCompany(
+  enrich(
     req: operations.EnrichCompanyRequest,
     config?: AxiosRequestConfig
   ): Promise<operations.EnrichCompanyResponse> {
@@ -194,12 +87,125 @@ export class Companies {
   }
 
   /**
+   * List company employees
+   */
+  listEmployees(
+    req: operations.ListEmployeesRequest,
+    config?: AxiosRequestConfig
+  ): Promise<operations.ListEmployeesResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.ListEmployeesRequest(req);
+    }
+
+    const baseURL: string = this._serverURL;
+    const url: string = utils.generateURL(
+      baseURL,
+      "/companies/{id}/employees",
+      req
+    );
+
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+    const queryParams: string = utils.serializeQueryParams(req);
+
+    const r = client.request({
+      url: url + queryParams,
+      method: "get",
+      ...config,
+    });
+
+    return r.then((httpRes: AxiosResponse) => {
+      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+      if (httpRes?.status == null)
+        throw new Error(`status code not found in response: ${httpRes}`);
+      const res: operations.ListEmployeesResponse =
+        new operations.ListEmployeesResponse({
+          statusCode: httpRes.status,
+          contentType: contentType,
+          rawResponse: httpRes,
+        });
+      switch (true) {
+        case httpRes?.status == 200:
+          if (utils.matchContentType(contentType, `*/*`)) {
+            const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+            const out: Uint8Array = new Uint8Array(resBody.length);
+            for (let i = 0; i < resBody.length; i++)
+              out[i] = resBody.charCodeAt(i);
+            res.body = out;
+          }
+          break;
+        case [401, 403, 404].includes(httpRes?.status):
+          break;
+      }
+
+      return res;
+    });
+  }
+
+  /**
+   * List company jobs
+   */
+  listJobs(
+    req: operations.ListJobsRequest,
+    config?: AxiosRequestConfig
+  ): Promise<operations.ListJobsResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.ListJobsRequest(req);
+    }
+
+    const baseURL: string = this._serverURL;
+    const url: string = utils.generateURL(baseURL, "/companies/{id}/jobs", req);
+
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+    const queryParams: string = utils.serializeQueryParams(req);
+
+    const r = client.request({
+      url: url + queryParams,
+      method: "get",
+      ...config,
+    });
+
+    return r.then((httpRes: AxiosResponse) => {
+      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+      if (httpRes?.status == null)
+        throw new Error(`status code not found in response: ${httpRes}`);
+      const res: operations.ListJobsResponse = new operations.ListJobsResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+      switch (true) {
+        case httpRes?.status == 200:
+          if (utils.matchContentType(contentType, `*/*`)) {
+            const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+            const out: Uint8Array = new Uint8Array(resBody.length);
+            for (let i = 0; i < resBody.length; i++)
+              out[i] = resBody.charCodeAt(i);
+            res.body = out;
+          }
+          break;
+        case [401, 403, 404].includes(httpRes?.status):
+          break;
+      }
+
+      return res;
+    });
+  }
+
+  /**
    * Search Companies
    */
-  searchCompanies(
-    req: any,
+  search(
+    req: operations.SearchCompaniesApplicationJSON,
     config?: AxiosRequestConfig
   ): Promise<operations.SearchCompaniesResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.SearchCompaniesApplicationJSON(req);
+    }
+
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/companies/search";
 

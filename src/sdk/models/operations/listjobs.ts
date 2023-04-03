@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
-export class CompanyEmployeesRequest extends SpeakeasyBase {
+export class ListJobsRequest extends SpeakeasyBase {
   /**
    * ID of the company
    */
@@ -29,7 +29,7 @@ export class CompanyEmployeesRequest extends SpeakeasyBase {
   perPage?: string;
 }
 
-export class CompanyEmployeesResponse extends SpeakeasyBase {
+export class ListJobsResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   body?: Uint8Array;
 
