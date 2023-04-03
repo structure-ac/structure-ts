@@ -58,7 +58,7 @@ export class Structure {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "0.0.3";
+  private _sdkVersion = "0.0.4";
   private _genVersion = "2.16.7";
   private _globals: any;
 
