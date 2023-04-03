@@ -6,13 +6,13 @@
 ### NPM
 
 ```bash
-npm add https://github.com/structure-ac/structure-ts
+npm add Structure
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/structure-ac/structure-ts
+yarn add Structure
 ```
 <!-- End SDK Installation -->
 
