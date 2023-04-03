@@ -3,10 +3,10 @@
 import {
   EnrichCompanyRequest,
   EnrichCompanyResponse
-} from "structure-ts/dist/sdk/models/operations";
+} from "structure-ac/dist/sdk/models/operations";
 
 import { AxiosError } from "axios";
-import { Structure } from "structure-ts";
+import { Structure } from "structure-ac";
 const sdk = new Structure({
   security: {
     bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
