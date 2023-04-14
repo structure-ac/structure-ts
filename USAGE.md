@@ -14,10 +14,10 @@ const sdk = new Structure({
 });
 
 const req: EnrichCompanyRequest = {
-  countryCode: "corrupti",
+  countryCode: "MA",
   headquarters: "provident",
-  id: "distinctio",
-  name: "quibusdam",
+  id: "bd9d8d69-a674-4e0f-867c-c8796ed151a0",
+  name: "Estelle Will",
 };
 
 sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {
