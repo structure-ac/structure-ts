@@ -7,9 +7,9 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: structure
-  sdkFlattening: false
+  sdkFlattening: true
   singleTagPerOp: false
 typescript:
-  version: 0.1.1
+  version: ""
   author: structure
   packageName: structure-ac
