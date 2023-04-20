@@ -9,8 +9,8 @@ export class EnrichPersonRequest extends SpeakeasyBase {
   /**
    * LinkedIn ID of the person
    */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=id" })
-  id?: string;
+  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+  id: string;
 }
 
 export class EnrichPersonResponse extends SpeakeasyBase {

@@ -50,10 +50,7 @@ const sdk = new Structure({
 });
 
 const req: EnrichCompanyRequest = {
-  countryCode: "corrupti",
-  headquarters: "provident",
-  id: "distinctio",
-  name: "quibusdam",
+  id: "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
 };
 
 sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {

@@ -45,14 +45,12 @@ export class People {
     }
 
     const baseURL: string = this._serverURL;
-    const url: string = baseURL.replace(/\/$/, "") + "/people/enrich";
+    const url: string = utils.generateURL(baseURL, "/people/{id}/enrich", req);
 
     const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const queryParams: string = utils.serializeQueryParams(req);
-
     const r = client.request({
-      url: url + queryParams,
+      url: url,
       method: "get",
       ...config,
     });
