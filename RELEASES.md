@@ -69,7 +69,6 @@ Based on:
 - Speakeasy CLI 1.19.7 (2.17.9) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v0.1.1] https://www.npmjs.com/package/structure-ac/v/0.1.1 - .
-
 ## 2023-04-14 00:34:45
 ### Changes
 Based on:

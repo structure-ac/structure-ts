@@ -7,32 +7,10 @@ import { AxiosResponse } from "axios";
 
 export class EnrichCompanyRequest extends SpeakeasyBase {
   /**
-   * Country code of the company
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=country_code",
-  })
-  countryCode?: string;
-
-  /**
-   * The headquarters of the company
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=headquarters",
-  })
-  headquarters?: string;
-
-  /**
    * ID of the company
    */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=id" })
-  id?: string;
-
-  /**
-   * Game of the company
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=name" })
-  name?: string;
+  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+  id: string;
 }
 
 export class EnrichCompanyResponse extends SpeakeasyBase {

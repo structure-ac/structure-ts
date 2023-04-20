@@ -15,7 +15,7 @@ export class SearchCompaniesApplicationJSON extends SpeakeasyBase {
   filter?: string;
 
   /**
-   * Number of results per page (0-100)
+   * Number of results per page (0-100) default 10
    */
   @SpeakeasyMetadata()
   @Expose({ name: "limit" })

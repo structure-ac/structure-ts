@@ -14,10 +14,7 @@ const sdk = new Structure({
 });
 
 const req: EnrichCompanyRequest = {
-  countryCode: "MA",
-  headquarters: "provident",
-  id: "bd9d8d69-a674-4e0f-867c-c8796ed151a0",
-  name: "Estelle Will",
+  id: "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
 };
 
 sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {

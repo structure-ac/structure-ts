@@ -123,6 +123,12 @@ export class Company extends SpeakeasyBase {
   organizationType: string;
 
   /**
+   * The company's profiles
+   */
+  @SpeakeasyMetadata()
+  profiles: string[];
+
+  /**
    * The comapny's headquarters region
    */
   @SpeakeasyMetadata()
