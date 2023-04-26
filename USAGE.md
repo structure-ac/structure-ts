@@ -1,12 +1,9 @@
 <!-- Start SDK Example Usage -->
 ```typescript
-import {
-  EnrichCompanyRequest,
-  EnrichCompanyResponse
-} from "structure-ac/dist/sdk/models/operations";
-
 import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
+import { EnrichCompanyRequest, EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
+
 const sdk = new Structure({
   security: {
     bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
@@ -18,7 +15,9 @@ const req: EnrichCompanyRequest = {
 };
 
 sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {
-   // handle response
+  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+    // handle response
+  }
 });
 ```
 <!-- End SDK Example Usage -->

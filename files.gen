@@ -36,4 +36,9 @@ src/sdk/models/shared/company.ts
 src/sdk/models/shared/person.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
+docs/structure/README.md
+docs/accounts/README.md
+docs/companies/README.md
+docs/people/README.md
+docs/user/README.md
 USAGE.md
