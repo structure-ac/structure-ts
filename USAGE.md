@@ -1,8 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { EnrichCompanyRequest, EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
+import { EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -10,12 +9,10 @@ const sdk = new Structure({
   },
 });
 
-const req: EnrichCompanyRequest = {
+sdk.companies.enrich({
   id: "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
-};
-
-sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: EnrichCompanyResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

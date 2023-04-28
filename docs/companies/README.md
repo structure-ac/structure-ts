@@ -18,9 +18,8 @@ Enrich a company profile
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { EnrichCompanyRequest, EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
+import { EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -28,12 +27,10 @@ const sdk = new Structure({
   },
 });
 
-const req: EnrichCompanyRequest = {
+sdk.companies.enrich({
   id: "a05dfc2d-df7c-4c78-8a1b-a928fc816742",
-};
-
-sdk.companies.enrich(req).then((res: EnrichCompanyResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: EnrichCompanyResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -46,9 +43,8 @@ List company employees
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { ListEmployeesRequest, ListEmployeesResponse } from "structure-ac/dist/sdk/models/operations";
+import { ListEmployeesResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -56,14 +52,12 @@ const sdk = new Structure({
   },
 });
 
-const req: ListEmployeesRequest = {
+sdk.companies.listEmployees({
   id: "cb739205-9293-496f-aa75-96eb10faaa23",
   offset: "corporis",
   perPage: "explicabo",
-};
-
-sdk.companies.listEmployees(req).then((res: ListEmployeesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: ListEmployeesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -76,9 +70,8 @@ List company jobs
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { ListJobsRequest, ListJobsResponse } from "structure-ac/dist/sdk/models/operations";
+import { ListJobsResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -86,14 +79,12 @@ const sdk = new Structure({
   },
 });
 
-const req: ListJobsRequest = {
+sdk.companies.listJobs({
   id: "c5955907-aff1-4a3a-afa9-467739251aa5",
   offset: "odit",
   perPage: "quo",
-};
-
-sdk.companies.listJobs(req).then((res: ListJobsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: ListJobsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -106,9 +97,8 @@ Search Companies
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { SearchCompaniesApplicationJSON, SearchCompaniesResponse } from "structure-ac/dist/sdk/models/operations";
+import { SearchCompaniesResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -116,15 +106,13 @@ const sdk = new Structure({
   },
 });
 
-const req: SearchCompaniesApplicationJSON = {
+sdk.companies.search({
   filter: "sequi",
   limit: "tenetur",
   page: "ipsam",
   query: "id",
-};
-
-sdk.companies.search(req).then((res: SearchCompaniesResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: SearchCompaniesResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

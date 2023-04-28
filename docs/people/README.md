@@ -16,9 +16,8 @@ Enrich a person profile
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { EnrichPersonRequest, EnrichPersonResponse } from "structure-ac/dist/sdk/models/operations";
+import { EnrichPersonResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -26,12 +25,10 @@ const sdk = new Structure({
   },
 });
 
-const req: EnrichPersonRequest = {
+sdk.people.enrich({
   id: "d019da1f-fe78-4f09-bb00-74f15471b5e6",
-};
-
-sdk.people.enrich(req).then((res: EnrichPersonResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: EnrichPersonResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -44,9 +41,8 @@ Search People
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
-import { SearchPeopleApplicationJSON, SearchPeopleResponse } from "structure-ac/dist/sdk/models/operations";
+import { SearchPeopleResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
@@ -54,15 +50,13 @@ const sdk = new Structure({
   },
 });
 
-const req: SearchPeopleApplicationJSON = {
+sdk.people.search({
   filter: "repudiandae",
   limit: "quae",
   page: "ipsum",
   query: "quidem",
-};
-
-sdk.people.search(req).then((res: SearchPeopleResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: SearchPeopleResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

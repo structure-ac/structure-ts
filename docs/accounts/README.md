@@ -15,7 +15,6 @@ Show current user accounts
 ### Example Usage
 
 ```typescript
-import { AxiosError } from "axios";
 import { Structure } from "structure-ac";
 import { ListUsersResponse } from "structure-ac/dist/sdk/models/operations";
 
@@ -25,8 +24,8 @@ const sdk = new Structure({
   },
 });
 
-sdk.accounts.listUsers().then((res: ListUsersResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+sdk.accounts.listUsers().then((res: ListUsersResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
