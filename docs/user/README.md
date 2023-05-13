@@ -21,7 +21,7 @@ import { LoginResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
@@ -47,7 +47,7 @@ import { MeResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
   },
 });
 
