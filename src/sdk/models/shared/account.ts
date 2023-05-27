@@ -5,45 +5,45 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 
 export class Account extends SpeakeasyBase {
-  /**
-   * List of the users in the account
-   */
-  @SpeakeasyMetadata()
-  accountUsers: string[];
+    /**
+     * List of the users in the account
+     */
+    @SpeakeasyMetadata()
+    accountUsers: string[];
 
-  /**
-   * Timestamp of the account creation date
-   */
-  @SpeakeasyMetadata()
-  createdAt: string;
+    /**
+     * Timestamp of the account creation date
+     */
+    @SpeakeasyMetadata()
+    createdAt: string;
 
-  /**
-   * The id of the account
-   */
-  @SpeakeasyMetadata()
-  id: number;
+    /**
+     * The id of the account
+     */
+    @SpeakeasyMetadata()
+    id: number;
 
-  /**
-   * The name of the account
-   */
-  @SpeakeasyMetadata()
-  name: string;
+    /**
+     * The name of the account
+     */
+    @SpeakeasyMetadata()
+    name: string;
 
-  /**
-   * The id of the account owner
-   */
-  @SpeakeasyMetadata()
-  ownerId: number;
+    /**
+     * The id of the account owner
+     */
+    @SpeakeasyMetadata()
+    ownerId: number;
 
-  /**
-   * If the account is personal or belonging to another account
-   */
-  @SpeakeasyMetadata()
-  personal: boolean;
+    /**
+     * If the account is personal or belonging to another account
+     */
+    @SpeakeasyMetadata()
+    personal: boolean;
 
-  /**
-   * Timestamp of the last account update date
-   */
-  @SpeakeasyMetadata()
-  updatedAt: string;
+    /**
+     * Timestamp of the last account update date
+     */
+    @SpeakeasyMetadata()
+    updatedAt: string;
 }

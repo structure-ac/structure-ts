@@ -8,447 +8,447 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
  * returns the person
  */
 export class Person extends SpeakeasyBase {
-  /**
-   * The birth date of the person
-   */
-  @SpeakeasyMetadata()
-  birthDate: string;
-
-  /**
-   * The birth year of the person
-   */
-  @SpeakeasyMetadata()
-  birthYear: number;
-
-  /**
-   * The certifications of the person
-   */
-  @SpeakeasyMetadata()
-  certifications: string[];
-
-  /**
-   * The educational history of the person
-   */
-  @SpeakeasyMetadata()
-  education: string[];
-
-  /**
-   * The personal and work emails of the person
-   */
-  @SpeakeasyMetadata()
-  emails: string[];
-
-  /**
-   * The works experience of the person
-   */
-  @SpeakeasyMetadata()
-  experience: string[];
-
-  /**
-   * The Facebook ID of the person
-   */
-  @SpeakeasyMetadata()
-  facebookId: string;
-
-  /**
-   * The Facebook URL of the person
-   */
-  @SpeakeasyMetadata()
-  facebookUrl: string;
-
-  /**
-   * The Facebook username of the person
-   */
-  @SpeakeasyMetadata()
-  facebookUsername: string;
-
-  /**
-   * The first name of the person
-   */
-  @SpeakeasyMetadata()
-  firstName: string;
-
-  /**
-   * The full name of the person
-   */
-  @SpeakeasyMetadata()
-  fullName: string;
-
-  /**
-   * The gender of the person
-   */
-  @SpeakeasyMetadata()
-  gender: string;
-
-  /**
-   * The Github URL of the person
-   */
-  @SpeakeasyMetadata()
-  githubUrl: string;
-
-  /**
-   * The Github username of the person
-   */
-  @SpeakeasyMetadata()
-  githubUsername: string;
-
-  /**
-   * The key for looking up the company
-   */
-  @SpeakeasyMetadata()
-  id: number;
-
-  /**
-   * The industry of the person
-   */
-  @SpeakeasyMetadata()
-  industry: string;
-
-  /**
-   * The inferred salary band for the person
-   */
-  @SpeakeasyMetadata()
-  inferredSalary: string;
-
-  /**
-   * The inferred years of experience for the person
-   */
-  @SpeakeasyMetadata()
-  inferredYearsExperience: number;
-
-  /**
-   * The interests of the person
-   */
-  @SpeakeasyMetadata()
-  interests: string[];
-
-  /**
-   * The current job company Facebook URL
-   */
-  @SpeakeasyMetadata()
-  jobCompanyFacebookUrl: string;
-
-  /**
-   * The current job company founded year
-   */
-  @SpeakeasyMetadata()
-  jobCompanyFounded: string;
-
-  /**
-   * The current job company ID
-   */
-  @SpeakeasyMetadata()
-  jobCompanyId: string;
-
-  /**
-   * The current job company industry
-   */
-  @SpeakeasyMetadata()
-  jobCompanyIndustry: string;
-
-  /**
-   * The current job company id on LinkedIn
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLinkedinId: string;
-
-  /**
-   * The current job company LinkedIn URL
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLinkedinUrl: string;
-
-  /**
-   * The current job company location street adress second line
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationAddressLine2: string;
-
-  /**
-   * The current job company location continent
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationContinent: string;
-
-  /**
-   * The current job company location country
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationCountry: string;
-
-  /**
-   * The current job company location geo coordinates
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationGeo: string;
-
-  /**
-   * The current job company location city
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationLocality: string;
-
-  /**
-   * The current job company location metro
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationMetro: string;
-
-  /**
-   * The current job company location name
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationName: string;
-
-  /**
-   * The current job company location postal code
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationPostalCode: string;
-
-  /**
-   * The current job company location region
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationRegion: string;
-
-  /**
-   * The current job company location street address
-   */
-  @SpeakeasyMetadata()
-  jobCompanyLocationStreetAddress: string;
-
-  /**
-   * The current job company name
-   */
-  @SpeakeasyMetadata()
-  jobCompanyName: string;
-
-  /**
-   * The current job company size
-   */
-  @SpeakeasyMetadata()
-  jobCompanySize: string;
-
-  /**
-   * The current job company Twitter URL
-   */
-  @SpeakeasyMetadata()
-  jobCompanyTwitterUrl: string;
-
-  /**
-   * The current job company website
-   */
-  @SpeakeasyMetadata()
-  jobCompanyWebsite: string;
-
-  /**
-   * The last update date for the job
-   */
-  @SpeakeasyMetadata()
-  jobLastUpdated: string;
-
-  /**
-   * The start date for the current job
-   */
-  @SpeakeasyMetadata()
-  jobStartDate: string;
-
-  /**
-   * The summary for the current job
-   */
-  @SpeakeasyMetadata()
-  jobSummary: string;
-
-  /**
-   * The current job title of the person
-   */
-  @SpeakeasyMetadata()
-  jobTitle: string;
-
-  /**
-   * The current job title levels
-   */
-  @SpeakeasyMetadata()
-  jobTitleLevels: string[];
-
-  /**
-   * The current job title role of the person
-   */
-  @SpeakeasyMetadata()
-  jobTitleRole: string;
-
-  /**
-   * The current job title sub-role of the person
-   */
-  @SpeakeasyMetadata()
-  jobTitleSubRole: string;
-
-  /**
-   * The languages of the person
-   */
-  @SpeakeasyMetadata()
-  languages: string[];
-
-  /**
-   * The last name of the person
-   */
-  @SpeakeasyMetadata()
-  lastName: string;
-
-  /**
-   * The number of LinkedIn connections for the person
-   */
-  @SpeakeasyMetadata()
-  linkedinConnections: number;
-
-  /**
-   * The linkedIn ID of the person
-   */
-  @SpeakeasyMetadata()
-  linkedinId: number;
-
-  /**
-   * The linkedIn URL of the person
-   */
-  @SpeakeasyMetadata()
-  linkedinUrl: string;
-
-  /**
-   * The linkedIn user name of the person
-   */
-  @SpeakeasyMetadata()
-  linkedinUsername: string;
-
-  /**
-   * The current location street address second line for the person
-   */
-  @SpeakeasyMetadata()
-  locationAddressLineTwo: string;
-
-  /**
-   * The current location continent for the person
-   */
-  @SpeakeasyMetadata()
-  locationContinent: string;
-
-  /**
-   * The current location country for the person
-   */
-  @SpeakeasyMetadata()
-  locationCountry: string;
-
-  /**
-   * The current location geo coordinates for the person
-   */
-  @SpeakeasyMetadata()
-  locationGeo: string[];
-
-  /**
-   * The current location last updated date for the person
-   */
-  @SpeakeasyMetadata()
-  locationLastUpdated: string;
-
-  /**
-   * The current location city for the person
-   */
-  @SpeakeasyMetadata()
-  locationLocality: string;
-
-  /**
-   * The current location metro for the person
-   */
-  @SpeakeasyMetadata()
-  locationMetro: string;
-
-  /**
-   * The current location name for the person
-   */
-  @SpeakeasyMetadata()
-  locationName: string;
-
-  /**
-   * The current location postal code for the person
-   */
-  @SpeakeasyMetadata()
-  locationPostalCode: string;
-
-  /**
-   * The current location region for the person
-   */
-  @SpeakeasyMetadata()
-  locationRegion: string;
-
-  /**
-   * The current location street address for the person
-   */
-  @SpeakeasyMetadata()
-  locationStreetAddress: string;
-
-  /**
-   * The middle initial of the person
-   */
-  @SpeakeasyMetadata()
-  middleInitial: string;
-
-  /**
-   * The middle name of the person
-   */
-  @SpeakeasyMetadata()
-  middleName: string;
-
-  /**
-   * The mobile phone of the person
-   */
-  @SpeakeasyMetadata()
-  mobilePhone: string;
-
-  /**
-   * The phone numbers of the person
-   */
-  @SpeakeasyMetadata()
-  phoneNumbers: string[];
-
-  /**
-   * The social profiles of the person
-   */
-  @SpeakeasyMetadata()
-  profiles: string[];
-
-  /**
-   * The skills of the person
-   */
-  @SpeakeasyMetadata()
-  skills: string[];
-
-  /**
-   * The street addresses of the person
-   */
-  @SpeakeasyMetadata()
-  streetAddresses: string[];
-
-  /**
-   * The self-summary of the person's work experience
-   */
-  @SpeakeasyMetadata()
-  summary: string;
-
-  /**
-   * The Twitter URL of the person
-   */
-  @SpeakeasyMetadata()
-  twitterUrl: string;
-
-  /**
-   * The Twitter username of the person
-   */
-  @SpeakeasyMetadata()
-  twitterUsername: string;
-
-  /**
-   * The work email of the person
-   */
-  @SpeakeasyMetadata()
-  workEmail: string;
+    /**
+     * The birth date of the person
+     */
+    @SpeakeasyMetadata()
+    birthDate: string;
+
+    /**
+     * The birth year of the person
+     */
+    @SpeakeasyMetadata()
+    birthYear: number;
+
+    /**
+     * The certifications of the person
+     */
+    @SpeakeasyMetadata()
+    certifications: string[];
+
+    /**
+     * The educational history of the person
+     */
+    @SpeakeasyMetadata()
+    education: string[];
+
+    /**
+     * The personal and work emails of the person
+     */
+    @SpeakeasyMetadata()
+    emails: string[];
+
+    /**
+     * The works experience of the person
+     */
+    @SpeakeasyMetadata()
+    experience: string[];
+
+    /**
+     * The Facebook ID of the person
+     */
+    @SpeakeasyMetadata()
+    facebookId: string;
+
+    /**
+     * The Facebook URL of the person
+     */
+    @SpeakeasyMetadata()
+    facebookUrl: string;
+
+    /**
+     * The Facebook username of the person
+     */
+    @SpeakeasyMetadata()
+    facebookUsername: string;
+
+    /**
+     * The first name of the person
+     */
+    @SpeakeasyMetadata()
+    firstName: string;
+
+    /**
+     * The full name of the person
+     */
+    @SpeakeasyMetadata()
+    fullName: string;
+
+    /**
+     * The gender of the person
+     */
+    @SpeakeasyMetadata()
+    gender: string;
+
+    /**
+     * The Github URL of the person
+     */
+    @SpeakeasyMetadata()
+    githubUrl: string;
+
+    /**
+     * The Github username of the person
+     */
+    @SpeakeasyMetadata()
+    githubUsername: string;
+
+    /**
+     * The key for looking up the company
+     */
+    @SpeakeasyMetadata()
+    id: number;
+
+    /**
+     * The industry of the person
+     */
+    @SpeakeasyMetadata()
+    industry: string;
+
+    /**
+     * The inferred salary band for the person
+     */
+    @SpeakeasyMetadata()
+    inferredSalary: string;
+
+    /**
+     * The inferred years of experience for the person
+     */
+    @SpeakeasyMetadata()
+    inferredYearsExperience: number;
+
+    /**
+     * The interests of the person
+     */
+    @SpeakeasyMetadata()
+    interests: string[];
+
+    /**
+     * The current job company Facebook URL
+     */
+    @SpeakeasyMetadata()
+    jobCompanyFacebookUrl: string;
+
+    /**
+     * The current job company founded year
+     */
+    @SpeakeasyMetadata()
+    jobCompanyFounded: string;
+
+    /**
+     * The current job company ID
+     */
+    @SpeakeasyMetadata()
+    jobCompanyId: string;
+
+    /**
+     * The current job company industry
+     */
+    @SpeakeasyMetadata()
+    jobCompanyIndustry: string;
+
+    /**
+     * The current job company id on LinkedIn
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLinkedinId: string;
+
+    /**
+     * The current job company LinkedIn URL
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLinkedinUrl: string;
+
+    /**
+     * The current job company location street adress second line
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationAddressLine2: string;
+
+    /**
+     * The current job company location continent
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationContinent: string;
+
+    /**
+     * The current job company location country
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationCountry: string;
+
+    /**
+     * The current job company location geo coordinates
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationGeo: string;
+
+    /**
+     * The current job company location city
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationLocality: string;
+
+    /**
+     * The current job company location metro
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationMetro: string;
+
+    /**
+     * The current job company location name
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationName: string;
+
+    /**
+     * The current job company location postal code
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationPostalCode: string;
+
+    /**
+     * The current job company location region
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationRegion: string;
+
+    /**
+     * The current job company location street address
+     */
+    @SpeakeasyMetadata()
+    jobCompanyLocationStreetAddress: string;
+
+    /**
+     * The current job company name
+     */
+    @SpeakeasyMetadata()
+    jobCompanyName: string;
+
+    /**
+     * The current job company size
+     */
+    @SpeakeasyMetadata()
+    jobCompanySize: string;
+
+    /**
+     * The current job company Twitter URL
+     */
+    @SpeakeasyMetadata()
+    jobCompanyTwitterUrl: string;
+
+    /**
+     * The current job company website
+     */
+    @SpeakeasyMetadata()
+    jobCompanyWebsite: string;
+
+    /**
+     * The last update date for the job
+     */
+    @SpeakeasyMetadata()
+    jobLastUpdated: string;
+
+    /**
+     * The start date for the current job
+     */
+    @SpeakeasyMetadata()
+    jobStartDate: string;
+
+    /**
+     * The summary for the current job
+     */
+    @SpeakeasyMetadata()
+    jobSummary: string;
+
+    /**
+     * The current job title of the person
+     */
+    @SpeakeasyMetadata()
+    jobTitle: string;
+
+    /**
+     * The current job title levels
+     */
+    @SpeakeasyMetadata()
+    jobTitleLevels: string[];
+
+    /**
+     * The current job title role of the person
+     */
+    @SpeakeasyMetadata()
+    jobTitleRole: string;
+
+    /**
+     * The current job title sub-role of the person
+     */
+    @SpeakeasyMetadata()
+    jobTitleSubRole: string;
+
+    /**
+     * The languages of the person
+     */
+    @SpeakeasyMetadata()
+    languages: string[];
+
+    /**
+     * The last name of the person
+     */
+    @SpeakeasyMetadata()
+    lastName: string;
+
+    /**
+     * The number of LinkedIn connections for the person
+     */
+    @SpeakeasyMetadata()
+    linkedinConnections: number;
+
+    /**
+     * The linkedIn ID of the person
+     */
+    @SpeakeasyMetadata()
+    linkedinId: number;
+
+    /**
+     * The linkedIn URL of the person
+     */
+    @SpeakeasyMetadata()
+    linkedinUrl: string;
+
+    /**
+     * The linkedIn user name of the person
+     */
+    @SpeakeasyMetadata()
+    linkedinUsername: string;
+
+    /**
+     * The current location street address second line for the person
+     */
+    @SpeakeasyMetadata()
+    locationAddressLineTwo: string;
+
+    /**
+     * The current location continent for the person
+     */
+    @SpeakeasyMetadata()
+    locationContinent: string;
+
+    /**
+     * The current location country for the person
+     */
+    @SpeakeasyMetadata()
+    locationCountry: string;
+
+    /**
+     * The current location geo coordinates for the person
+     */
+    @SpeakeasyMetadata()
+    locationGeo: string[];
+
+    /**
+     * The current location last updated date for the person
+     */
+    @SpeakeasyMetadata()
+    locationLastUpdated: string;
+
+    /**
+     * The current location city for the person
+     */
+    @SpeakeasyMetadata()
+    locationLocality: string;
+
+    /**
+     * The current location metro for the person
+     */
+    @SpeakeasyMetadata()
+    locationMetro: string;
+
+    /**
+     * The current location name for the person
+     */
+    @SpeakeasyMetadata()
+    locationName: string;
+
+    /**
+     * The current location postal code for the person
+     */
+    @SpeakeasyMetadata()
+    locationPostalCode: string;
+
+    /**
+     * The current location region for the person
+     */
+    @SpeakeasyMetadata()
+    locationRegion: string;
+
+    /**
+     * The current location street address for the person
+     */
+    @SpeakeasyMetadata()
+    locationStreetAddress: string;
+
+    /**
+     * The middle initial of the person
+     */
+    @SpeakeasyMetadata()
+    middleInitial: string;
+
+    /**
+     * The middle name of the person
+     */
+    @SpeakeasyMetadata()
+    middleName: string;
+
+    /**
+     * The mobile phone of the person
+     */
+    @SpeakeasyMetadata()
+    mobilePhone: string;
+
+    /**
+     * The phone numbers of the person
+     */
+    @SpeakeasyMetadata()
+    phoneNumbers: string[];
+
+    /**
+     * The social profiles of the person
+     */
+    @SpeakeasyMetadata()
+    profiles: string[];
+
+    /**
+     * The skills of the person
+     */
+    @SpeakeasyMetadata()
+    skills: string[];
+
+    /**
+     * The street addresses of the person
+     */
+    @SpeakeasyMetadata()
+    streetAddresses: string[];
+
+    /**
+     * The self-summary of the person's work experience
+     */
+    @SpeakeasyMetadata()
+    summary: string;
+
+    /**
+     * The Twitter URL of the person
+     */
+    @SpeakeasyMetadata()
+    twitterUrl: string;
+
+    /**
+     * The Twitter username of the person
+     */
+    @SpeakeasyMetadata()
+    twitterUsername: string;
+
+    /**
+     * The work email of the person
+     */
+    @SpeakeasyMetadata()
+    workEmail: string;
 }

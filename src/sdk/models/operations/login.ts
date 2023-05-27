@@ -7,31 +7,31 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class LoginApplicationJSON extends SpeakeasyBase {
-  /**
-   * The email of the user
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "email" })
-  email: string;
+    /**
+     * The email of the user
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "email" })
+    email: string;
 
-  /**
-   * The password of the user
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "password" })
-  password: string;
+    /**
+     * The password of the user
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "password" })
+    password: string;
 }
 
 export class LoginResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -7,45 +7,45 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class SearchPeopleApplicationJSON extends SpeakeasyBase {
-  /**
-   * Filter for searching
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "filter" })
-  filter?: string;
+    /**
+     * Filter for searching
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "filter" })
+    filter?: string;
 
-  /**
-   * Number of results per page (0-100)
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "limit" })
-  limit?: string;
+    /**
+     * Number of results per page (0-100)
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "limit" })
+    limit?: string;
 
-  /**
-   * The offset number to start at
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "page" })
-  page?: string;
+    /**
+     * The offset number to start at
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "page" })
+    page?: string;
 
-  /**
-   * Query for searching
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "query" })
-  query?: string;
+    /**
+     * Query for searching
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "query" })
+    query?: string;
 }
 
 export class SearchPeopleResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

@@ -10,159 +10,151 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
  * People
  */
 export class People {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    _defaultClient: AxiosInstance;
+    _securityClient: AxiosInstance;
+    _serverURL: string;
+    _language: string;
+    _sdkVersion: string;
+    _genVersion: string;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Enrich a person profile
-   */
-  async enrich(
-    req: operations.EnrichPersonRequest,
-    config?: AxiosRequestConfig
-  ): Promise<operations.EnrichPersonResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.EnrichPersonRequest(req);
+    constructor(
+        defaultClient: AxiosInstance,
+        securityClient: AxiosInstance,
+        serverURL: string,
+        language: string,
+        sdkVersion: string,
+        genVersion: string
+    ) {
+        this._defaultClient = defaultClient;
+        this._securityClient = securityClient;
+        this._serverURL = serverURL;
+        this._language = language;
+        this._sdkVersion = sdkVersion;
+        this._genVersion = genVersion;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/people/{id}/enrich", req);
-
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...config?.headers };
-    headers["Accept"] = "*/*";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.EnrichPersonResponse =
-      new operations.EnrichPersonResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `*/*`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+    /**
+     * Enrich a person profile
+     */
+    async enrich(
+        req: operations.EnrichPersonRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.EnrichPersonResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.EnrichPersonRequest(req);
         }
-        break;
-      case [401, 403, 404, 422].includes(httpRes?.status):
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/people/{id}/enrich", req);
 
-  /**
-   * Search People
-   */
-  async search(
-    req: operations.SearchPeopleApplicationJSON,
-    config?: AxiosRequestConfig
-  ): Promise<operations.SearchPeopleResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.SearchPeopleApplicationJSON(req);
-    }
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
 
-    const baseURL: string = this._serverURL;
-    const url: string = baseURL.replace(/\/$/, "") + "/people/search";
+        const headers = { ...config?.headers };
+        headers["Accept"] = "*/*";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
 
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "request",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    const client: AxiosInstance = this._securityClient || this._defaultClient;
-
-    const headers = { ...reqBodyHeaders, ...config?.headers };
-    headers["Accept"] = "*/*";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.SearchPeopleResponse =
-      new operations.SearchPeopleResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `*/*`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case [401, 403].includes(httpRes?.status):
-        break;
+
+        const res: operations.EnrichPersonResponse = new operations.EnrichPersonResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `*/*`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case [401, 403, 404, 422].includes(httpRes?.status):
+                break;
+        }
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Search People
+     */
+    async search(
+        req: operations.SearchPeopleApplicationJSON,
+        config?: AxiosRequestConfig
+    ): Promise<operations.SearchPeopleResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.SearchPeopleApplicationJSON(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = baseURL.replace(/\/$/, "") + "/people/search";
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        const client: AxiosInstance = this._securityClient || this._defaultClient;
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "*/*";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.SearchPeopleResponse = new operations.SearchPeopleResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `*/*`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case [401, 403].includes(httpRes?.status):
+                break;
+        }
+
+        return res;
+    }
 }
