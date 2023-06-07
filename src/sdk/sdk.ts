@@ -46,8 +46,8 @@ export class SDKConfiguration {
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
-    sdkVersion = "0.17.0";
-    genVersion = "2.35.3";
+    sdkVersion = "0.17.1";
+    genVersion = "2.35.9";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -55,7 +55,7 @@ export class SDKConfiguration {
 }
 
 /**
- * Structure provides company and people data. Use our dataset of 700 million people and 24 million companies to build products, enrich person profiles, power predictive modeling/ai, analysis, and more.
+ * Structure: Structure provides company and people data. Use our dataset of 700 million people and 24 million companies to build products, enrich person profiles, power predictive modeling/ai, analysis, and more.
  */
 export class Structure {
     /**
