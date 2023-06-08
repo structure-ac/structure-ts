@@ -20,7 +20,7 @@ import { ListUsersResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "",
   },
 });
 

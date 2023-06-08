@@ -23,7 +23,7 @@ import { EnrichCompanyResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "",
   },
 });
 
@@ -48,7 +48,7 @@ import { ListEmployeesResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "",
   },
 });
 
@@ -75,7 +75,7 @@ import { ListJobsResponse } from "structure-ac/dist/sdk/models/operations";
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "",
   },
 });
 
@@ -102,7 +102,7 @@ import { SearchCompaniesResponse } from "structure-ac/dist/sdk/models/operations
 
 const sdk = new Structure({
   security: {
-    bearerAuth: "YOUR_BEARER_TOKEN_HERE",
+    bearerAuth: "",
   },
 });
 
