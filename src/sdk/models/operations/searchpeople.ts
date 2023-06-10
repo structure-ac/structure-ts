@@ -36,6 +36,8 @@ export class SearchPeopleApplicationJSON extends SpeakeasyBase {
     query?: string;
 }
 
+export class SearchPeople200Wildcard extends SpeakeasyBase {}
+
 export class SearchPeopleResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

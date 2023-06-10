@@ -25,6 +25,8 @@ export class ListJobsRequest extends SpeakeasyBase {
     perPage?: string;
 }
 
+export class ListJobs200Wildcard extends SpeakeasyBase {}
+
 export class ListJobsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

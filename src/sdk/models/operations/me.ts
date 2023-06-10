@@ -5,6 +5,8 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
+export class Me200Wildcard extends SpeakeasyBase {}
+
 export class MeResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;

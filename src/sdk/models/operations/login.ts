@@ -22,6 +22,8 @@ export class LoginApplicationJSON extends SpeakeasyBase {
     password: string;
 }
 
+export class Login200Wildcard extends SpeakeasyBase {}
+
 export class LoginResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     body?: Uint8Array;
